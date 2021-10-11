@@ -26,6 +26,12 @@ public:
         // TODO : déposer dans box nb_messages nombres entiers positifs avec attente
         // aléatoire entre chaque. Afficher des messages, via un osyncstream,
         // pour suivre l'avancement.
+
+        for(int i=0;i<nb_messages_; i++){
+            int msg = box_.get();
+            { osyncstream( std::cout ) << msg << "\n"; }
+        }
+
     }
 };
 

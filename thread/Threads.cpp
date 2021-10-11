@@ -27,6 +27,18 @@ int main() {
     // Créer un producteur et un consommateur
     // Créer les threads correspondants
     // Attendre la fin des threads
+    
+    MessageBox boiteAuxLettres{};
+    Random generator{100};
+
+    Consumer consumer{1, boiteAuxLettres, generator, 20};
+    Producer producer{2, boiteAuxLettres, generator, 20};
+
+    std::thread c(consumer);
+    std::thread p(producer);
+    
+    c.join();
+    p.join();
  
     return 0;
 }
