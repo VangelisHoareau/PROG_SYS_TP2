@@ -9,6 +9,8 @@
 #include <iostream>
 #include <sstream>
 #include <thread>
+#include <condition_variable>
+#include <mutex>
  
  
 #include "../Random.hpp"
@@ -27,6 +29,8 @@ int main() {
     // Créer un producteur et un consommateur
     // Créer les threads correspondants
     // Attendre la fin des threads
+
+    
     
     MessageBox boiteAuxLettres{};
     Random generator{100};
