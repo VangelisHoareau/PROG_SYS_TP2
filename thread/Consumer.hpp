@@ -29,7 +29,7 @@ public:
 
         for(int i=0;i<nb_messages_; i++){
             int msg = box_.get();
-            { osyncstream( std::cout ) << "Producer a mis " << msg << " dans la boîte\n"; }
+            { osyncstream( std::cout ) << "Consumer n°"<< name_ << " lit " << msg << " dans la boîte\n"; }
         }
 
     }

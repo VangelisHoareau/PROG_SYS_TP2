@@ -35,14 +35,26 @@ int main() {
     MessageBox boiteAuxLettres{};
     Random generator{100};
 
-    Consumer consumer{1, boiteAuxLettres, generator, 20};
-    Producer producer{2, boiteAuxLettres, generator, 20};
+    Consumer consumer1{1, boiteAuxLettres, generator, 20};
+    Consumer consumer2{2, boiteAuxLettres, generator, 20};
+    Producer producer1{1, boiteAuxLettres, generator, 10};
+    Producer producer2{2, boiteAuxLettres, generator, 10};
+    Producer producer3{3, boiteAuxLettres, generator, 10};
+    Producer producer4{4, boiteAuxLettres, generator, 10};
 
-    std::thread c(consumer);
-    std::thread p(producer);
+    std::thread c1(consumer1);
+    std::thread c2(consumer2);
+    std::thread p1(producer1);
+    std::thread p2(producer2);
+    std::thread p3(producer3);
+    std::thread p4(producer4);
     
-    c.join();
-    p.join();
+    c1.join();
+    c2.join();
+    p1.join();
+    p2.join();
+    p3.join();
+    p4.join();
  
     return 0;
 }
